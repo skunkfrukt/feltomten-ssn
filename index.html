@@ -10,8 +10,13 @@
 			}
 			
 			function generateRandomSerialNumber() {
-				var serialNumber = Math.floor(Math.random() * 1000);
-				return serialNumber;
+				var serialNumberString = Math.floor(Math.random() * 1000).toString();
+				
+				while (serialNumberString.length < 3) {
+					serialNumberString = "0" + serialNumberString;
+				}
+				
+				return serialNumberString;
 			}
 			
 			function calculateDigitSum(n) {
